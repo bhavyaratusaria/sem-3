@@ -8,7 +8,7 @@ int main()
     cout << "Enter length and width in cm: ";
     cin >> l >> w;
 
-    cout << "Area: " << (float)l * (float)w << endl;
-    cout << "Area: " << (int)l * (int)w;
+    cout << "Rectangle Area (float): " << (float)l * (float)w << endl;
+    cout << "Rectangle Area (int): " << (int)l * (int)w;
     return 0;
 }
