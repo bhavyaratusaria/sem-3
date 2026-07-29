@@ -33,7 +33,8 @@ int main()
     int n, i, flag, choice;
     int *ptr;
     printf("Menu:\n1. Search in array of integers\n");
-    printf("2. Search in array of strings\nEnter choice: ");
+    printf("2. Search in array of strings\n");
+    printf("Choice: ");
     scanf("%d", &choice);
     switch (choice)
     {
@@ -59,7 +60,7 @@ int main()
         }
         else
         {
-            printf("No. found at position: %d\n", result + 1);
+            printf("No. found at position: %d", result + 1);
         }
         free(ptr);
         break;
@@ -71,11 +72,11 @@ int main()
         printf("Enter strings: ");
         for (i = 0; i < 10; i++)
         {
-            scanf("%s", str[i]);
+            scanf("%s", &str[i]);
         }
 
         printf("Enter string to find: ");
-        scanf("%s", search);
+        scanf("%s", &search);
 
         int stringResult = stringsearch(str, 10, search);
 
@@ -85,11 +86,12 @@ int main()
         }
         else
         {
-            printf("String found at index: %d\n", stringResult + 1);
+            printf("String found at position: %d", stringResult + 1);
         }
         break;
     }
     default:
         printf("Enter 1 or 2");
     }
+    return 0;
 }
