@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        let s1 = Number(prompt("Enter Side 1:"));
+        let s2 = Number(prompt("Enter Side 2:"));
+        let s3 = Number(prompt("Enter Side 3:"));
+
+        if (s1 === s2 && s2 === s3) {
+            outcome = "Equilateral triangle.";
+        }
+        else if (s1 === s2 || s2 === s3 || s1 === s3) {
+            outcome = "Isosceles triangle.";
+        }
+        else {
+            outcome = "Scalene triangle.";
+        }
+    </script>
+</body>
+
+</html>

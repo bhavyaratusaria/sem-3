@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        let n1 = prompt("Enter first number")
+        let n2 = prompt("Enter second number")
+        let choice = Number(prompt("Enter choice: 1. Sum, 2. Difference, 3. Product, 4. Division."))
+        switch (choice) {
+            case 1:
+                let sum = n1 + n2
+                document.write("Sum: " + sum)
+            case 2:
+                let diff = n1 - n2
+                document.write("Difference: " + diff)
+            case 3:
+                let prod = n1 * n2
+                document.write("Product: " + prod)
+            case 4:
+                let div = n1 / n2
+                document.write("Division: " + div)
+        }
+    </script>
+</body>
+
+</html>
