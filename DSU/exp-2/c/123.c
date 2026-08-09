@@ -3,8 +3,21 @@
 
 int main()
 {
+    int num;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    if ((num % 2) == 0)
+    {
+        printf("number is divisible by 2.\n", num);
+    }
+    else
+    {
+        printf("number is not divisible by 2.\n", num);
+    }
+
     int n, i;
     int even = 0, odd = 0;
+
     printf("Enter no. of elements: ");
     scanf("%d", &n);
 
