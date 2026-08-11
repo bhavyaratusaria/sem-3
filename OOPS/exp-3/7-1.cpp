@@ -8,8 +8,7 @@ class Circle
     const float PI = 3.1415;
 
 public:
-    void
-    accept()
+    void accept()
     {
         cout << "Enter radius in cm: ";
         cin >> r;

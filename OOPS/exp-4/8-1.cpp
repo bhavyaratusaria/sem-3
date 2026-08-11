@@ -4,7 +4,6 @@ using namespace std;
 
 class Account
 {
-private:
     long acc_no;
     float bal;
 
@@ -15,7 +14,7 @@ public:
 
 void Account::accept()
 {
-    cout << "Enter account number: ";
+    cout << "Enter acc. number: ";
     cin >> acc_no;
     cout << "Enter balance: ";
     cin >> bal;

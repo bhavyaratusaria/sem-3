@@ -15,7 +15,7 @@ void Product::accept()
 {
     cout << "Enter product no.: ";
     cin >> pno;
-    cout << "Enter cost: " << cost;
+    cout << "Enter cost: ";
     cin >> cost;
 }
 void Product::display()

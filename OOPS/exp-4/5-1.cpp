@@ -27,4 +27,5 @@ int main()
 {
     r1.accept();
     r1.display();
+    return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// selection sort
 int main()
 {
     int i, j, n, temp, min;
