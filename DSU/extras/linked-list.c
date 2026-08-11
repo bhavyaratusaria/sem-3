@@ -9,7 +9,7 @@ struct Node
 
 struct Node *head = NULL;
 
-void insertAtBeginning(int data)
+void insertAtBeg(int data)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -37,7 +37,7 @@ void insertAtEnd(int data)
     temp->next = newNode;
 }
 
-void insertAtPosition(int data, int position)
+void insertAtPos(int data, int position)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -78,15 +78,15 @@ void display()
 
 int main()
 {
-    insertAtBeginning(20);
-    insertAtBeginning(10);
+    insertAtBeg(20);
+    insertAtBeg(10);
 
     insertAtEnd(40);
     insertAtEnd(50);
 
-    insertAtPosition(30, 3);
+    insertAtPos(30, 3);
 
     display();
-
+    printf("Null");
     return 0;
 }

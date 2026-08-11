@@ -3,7 +3,7 @@
 
 int main()
 {
-    char string[200] = "the teacher showed the students a new book.";
+    char string[100] = "the teacher showed the students a new book.";
     char find[20] = "the";
 
     char *ptr = string;
@@ -16,7 +16,7 @@ int main()
 
     while ((ptr = strstr(ptr, find)) != NULL)
     {
-        int index = ptr - string;
+        int index = ptr - string + 1;
         printf("%d ", index);
         count++;
         ptr += strlen(find);
