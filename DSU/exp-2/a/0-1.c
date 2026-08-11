@@ -17,6 +17,5 @@ int main()
     {
         printf("Bit at position %d is clear.", n);
     }
-
     return 0;
 }

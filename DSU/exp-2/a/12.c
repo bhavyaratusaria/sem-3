@@ -7,44 +7,43 @@ int main()
     printf("Enter num: ");
     scanf("%d", &n);
 
-    printf("Enter the bit position to toggle: ");
+    printf("Enter bit position to toggle: ");
     scanf("%d", &pos);
 
-    printf("\n--- Checking Bit at Position %d ---\n", pos);
+    printf("\nChecking Bit\n");
 
     int mask = 1 << pos;
     int check = n & mask;
 
     if (check != 0)
     {
-        printf("Bit at position %d is currently: SET (1)\n", pos);
+        printf("Bit is set (1)\n");
     }
     else
     {
-        printf("Bit at position %d is currently: CLEAR (0)\n", pos);
+        printf("Bit is clear (0)\n");
     }
 
-    printf("\n--- Toggling Bit at Position %d ---\n", pos);
+    printf("\nToggling Bit\n");
 
     int toggled = n ^ mask;
 
-    printf("Original num: %d\n", n);
-    printf("Number after toggling bit %d: %d\n", pos, toggled);
+    printf("Number after toggling bit at %d: %d\n", pos, toggled);
 
-    printf("\n--- Counting Total Set Bits ---\n");
+    printf("\nTotal Set Bits\n");
 
     int temp = n;
-    int total_set_bits = 0;
+    int set_bits = 0;
 
     while (temp > 0)
     {
         if ((temp & 1) == 1)
         {
-            total_set_bits++;
+            set_bits++;
         }
         temp = temp >> 1;
     }
 
-    printf("Total number of set bits (1s) in %d is: %d\n", n, total_set_bits);
+    printf("Total set bits in number is: %d\n", set_bits);
     return 0;
 }
