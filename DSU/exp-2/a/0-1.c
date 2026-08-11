@@ -3,7 +3,7 @@
 int main()
 {
     int num, n;
-    printf("Enter any number: ");
+    printf("Enter number: ");
     scanf("%d", &num);
 
     printf("Enter bit position: ");
