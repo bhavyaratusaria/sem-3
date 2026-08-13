@@ -9,7 +9,7 @@ int main()
     printf("Enter the no. of elements: ");
     scanf("%d", &n);
 
-    printf("Enter elements:\n");
+    printf("Enter elements: ");
     for (i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);

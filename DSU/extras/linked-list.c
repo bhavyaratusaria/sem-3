@@ -76,8 +76,25 @@ void display()
     }
 }
 
+void count()
+{
+    struct Node *temp = head;
+    int count = 0;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    printf("count = %d", count);
+}
+
 int main()
 {
+    // menu driven now:
+    printf("Linked List Operations:\n");
+    printf("1. Insert at Beginning\n");
+    printf("2. Insert at End\n");
+    printf("3. Insert at Position\n");
     insertAtBeg(20);
     insertAtBeg(10);
 
@@ -87,6 +104,7 @@ int main()
     insertAtPos(30, 3);
 
     display();
-    printf("Null");
+    printf("Null\n");
+    count();
     return 0;
 }

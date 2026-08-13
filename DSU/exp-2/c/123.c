@@ -6,7 +6,7 @@ int main()
     int num;
     printf("Enter number: ");
     scanf("%d", &num);
-    if ((num % 2) == 0)
+    if ((num & 1) == 0)
     {
         printf("number is divisible by 2.\n", num);
     }

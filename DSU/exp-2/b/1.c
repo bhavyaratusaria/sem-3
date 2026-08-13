@@ -8,7 +8,7 @@ int main()
     printf("Enter the no. of elements: ");
     scanf("%d", &n);
 
-    printf("Enter elements:\n");
+    printf("Enter elements: ");
     for (i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
@@ -26,6 +26,6 @@ int main()
         }
     }
 
-    printf("Maximum OR value: %d\n", max_or);
+    printf("Maximum OR value: %d", max_or);
     return 0;
 }

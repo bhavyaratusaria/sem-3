@@ -8,7 +8,7 @@ int main()
     printf("Enter no. of elements: ");
     scanf("%d", &n);
 
-    printf("Enter elements:\n", n);
+    printf("Enter elements: ");
     for (i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
@@ -26,8 +26,13 @@ int main()
             }
         }
     }
+    printf("Sorted array in descending order: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
 
-    printf("Enter element to find: ");
+    printf("\nEnter element to find: ");
     scanf("%d", &key);
 
     low = 0;
@@ -50,7 +55,6 @@ int main()
             high = mid - 1;
         }
     }
-
-    printf("Element found at position: %d", mid);
+    printf("Element found at position: %d", mid + 1);
     return 0;
 }
