@@ -6,7 +6,6 @@ class greatest
     int n1, n2, n3;
 
 public:
-    void great();
     void accept();
     void display();
 } g1;

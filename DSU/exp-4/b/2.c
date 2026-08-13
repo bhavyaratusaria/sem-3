@@ -20,7 +20,7 @@ int sort(char arr[][20], int n)
     }
 
     printf("Sorted array in ascending order: ");
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         printf("%s ", arr[i]);
     }
