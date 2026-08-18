@@ -3,8 +3,9 @@ using namespace std;
 // 2. Write an inline function to find the maximum of two numbers.
 class greatest
 {
-public:
     int n1, n2;
+
+public:
     void accept();
     void display();
 } g1;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <th colspan="4">
+                <input id="calc" readonly>
+            </th>
+        </tr>
+        <tr>
+            <td><button onclick="press('7')">7</button></td>
+            <td><button onclick="press('8')">8</button></td>
+            <td><button onclick="press('9')">9</button></td>
+            <td><button onclick="press('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="press('4')">4</button></td>
+            <td><button onclick="press('5')">5</button></td>
+            <td><button onclick="press('6')">6</button></td>
+            <td><button onclick="press('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="press('1')">1</button></td>
+            <td><button onclick="press('2')">2</button></td>
+            <td><button onclick="press('3')">3</button></td>
+            <td><button onclick="press('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clearScreen()">C</button></td>
+            <td><button onclick="press('0')">0</button></td>
+            <td><button onclick="calculate()">=</button></td>
+            <td><button onclick="press('/')">/</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function press(character) {
+            calc.value += character;
+        }
+
+        function clearScreen() {
+            calc.value = "";
+        }
+
+        function calculate() {
+            calc.value = eval(calc.value);
+        }
+    </script>
+
+</body>
+
+</html>

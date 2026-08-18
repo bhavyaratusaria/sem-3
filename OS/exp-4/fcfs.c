@@ -6,7 +6,7 @@ int main()
     int at[20], bt[20], ct[20], wt[20], tat[20], p[20];
     float avgwt = 0, avgtat = 0;
 
-    printf("Enter Number of Processes: ");
+    printf("Enter no. of Processes: ");
     scanf("%d", &n);
 
     for (i = 0; i < n; i++)
