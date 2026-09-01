@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+//
 class Fact
 {
     int n, i;
