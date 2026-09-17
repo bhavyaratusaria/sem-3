@@ -21,9 +21,11 @@ public:
     void disp()
     {
         if (post == "HOD")
+        {
             cout << "Name: " << name << endl;
-        cout << "Post: " << post << endl;
-        cout << "Salary: " << sal << endl;
+            cout << "Post: " << post << endl;
+            cout << "Salary: " << sal << endl;
+        }
     }
 } e[5];
 

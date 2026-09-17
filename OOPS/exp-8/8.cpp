@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-// WAP to create a class employee having data members as name id and department.
+// WAP to create a class Employee having data members as name id and department.
 // Accept and display data for 5 employees.
-class employee
+class Employee
 {
     string name, dep;
     int id;

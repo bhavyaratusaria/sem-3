@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>forms
+    </title>
+</head>
+
+<body>
+    <h2>JavaScript Form Validation</h2>
+    <form name="myForm" method="post">
+        Name:
+        <input type="text" name="fname">
+        Password:
+        <input type="password" name="password">
+        Submit:
+        <input type="submit" value="Submit">
+        Reset:
+        <input type="reset" value="Reset">
+        Click:
+        <input type="button" value="Click Me!" onclick="hello()">
+        Hover:
+        <input type="button" value="Hover Me!" onmouseover="hello()">
+        Mouse Down:
+        <input type="button" value="Mouse Down!" onmousedown="hello()">
+        Mouse Up:
+        <input type="button" value="Mouse Up!" onmouseup="hello()">
+        Mouseout:
+        <input type="button" value="Mouse Out!" onmouseout="hello()">
+        Press Key:
+        <input type="text" name="lname" onkeypress="keyPress()">
+        Key down:
+        <input type="text" name="lname" onkeydown="keyPress()">
+        Key up:
+        <input type="text" name="lname" onkeyup="keyRelease()">
+        <button onclick="hello()">Print Hello</button>
+        <button ondblclick="hello()">Double Click</button>
+    </form>
+    <script>
+        function hello() {
+            alert('Hello!')
+        }
+        function keyPress() {
+            alert('You pressed a key')
+        }
+        function keyRelease() {
+            alert('You released a key')
+        }
+    </script>
+</body>

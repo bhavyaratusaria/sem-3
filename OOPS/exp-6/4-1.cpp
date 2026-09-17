@@ -43,11 +43,11 @@ void display(first f, second s)
 {
     cout << endl
          << "Employee 1:" << endl;
-    cout << "Enter name: " << f.name << endl;
-    cout << "Enter salary: " << f.sal << endl;
+    cout << "Name: " << f.name << endl;
+    cout << "Salary: " << f.sal << endl;
     cout << "Employee 2:" << endl;
-    cout << "Enter name: " << s.name << endl;
-    cout << "Enter salary: " << s.sal << endl;
+    cout << "Name: " << s.name << endl;
+    cout << "Salary: " << s.sal << endl;
 }
 
 int main()

@@ -21,7 +21,7 @@ public:
         cout << "Simple Interest = " << (p * d * r) / 100;
     }
 } s1;
-float SI::r = 5.0; // Initialize the static member variable
+float SI::r = 5.0;
 
 int main()
 {

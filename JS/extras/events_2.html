@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <form>
+        <input type="text" id="input">
+    </form>
+    <script>
+        let x = document.getElementById("input");
+
+        x.addEventListener('focus', focus1);
+        function focus1() {
+            x.style.backgroundColor = "green";
+        }
+
+        x.addEventListener('blur', blur1);
+        function blur1() {
+            x.style.backgroundColor = "white";
+        }
+
+        x.addEventListener('change', function () {
+            alert(this.value)
+        });
+
+    </script>
+</body>
+
+</html>

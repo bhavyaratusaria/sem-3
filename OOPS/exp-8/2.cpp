@@ -5,8 +5,7 @@ using namespace std;
 class Book
 {
     int id;
-    string name;
-    string author;
+    string name, author;
 
 public:
     void accept()

@@ -87,6 +87,39 @@ void count()
     }
     printf("count = %d", count);
 }
+// deletion now
+void deleteAtBeg()
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node *temp = head;
+    head = head->next;
+    free(temp);
+}
+void deleteAtEnd()
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+    if (head->next == NULL)
+    {
+        free(head);
+        head = NULL;
+        return;
+    }
+    struct Node *temp = head;
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    free(temp->next);
+    temp->next = NULL;
+}
 
 int main()
 {
