@@ -39,15 +39,8 @@ int main()
             }
         }
     }
-    if (at[0] > 0)
-    {
-        ct[0] = at[0] + bt[0];
-    }
-    else
-    {
-        ct[0] = bt[0];
-    }
 
+    ct[0] = at[0] + bt[0];
     tat[0] = ct[0] - at[0];
     wt[0] = tat[0] - bt[0];
 

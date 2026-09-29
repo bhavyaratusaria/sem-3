@@ -10,22 +10,28 @@ class Weight
 public:
     void acc()
     {
-        cout << "Enter Mass: ";
-        cin >> m;
         cout << "Enter Gravitational Force: ";
         cin >> g;
     }
     void disp()
     {
-        cout << "Weight = " << m * g;
+        cout << "Weight = " << m * g << endl;
     }
-} w1;
+    static void mass()
+    {
+        cout << "Enter Mass of Object: ";
+        cin >> m;
+    }
+} w1, w2;
 
-float Weight::m = 10.0;
+float Weight::m = 0.0;
 
 int main()
 {
+    Weight::mass();
     w1.acc();
     w1.disp();
+    w2.acc();
+    w2.disp();
     return 0;
 }

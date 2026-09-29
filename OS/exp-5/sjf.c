@@ -38,7 +38,7 @@ int main()
 
     for (i = 1; i < n; i++)
     {
-        wt[i] = wt[i - 1] + bt[i - 1];
+        wt[i] = tat[i - 1];
         tat[i] = wt[i] + bt[i];
 
         total_wt = total_wt + wt[i];

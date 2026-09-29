@@ -15,12 +15,17 @@ public:
     {
         cout << "No. of objects created: " << count << endl;
     }
-} c1, c2, c3;
+};
+
+int Count::count = 0;
 
 int main()
 {
+    Count c1;
     c1.disp();
+    Count c2;
     c2.disp();
+    Count c3;
     c3.disp();
     return 0;
 }
