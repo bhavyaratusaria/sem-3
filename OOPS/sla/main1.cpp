@@ -1,12 +1,10 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
 #include <conio.h>   // Standard library on Windows for _kbhit() and _getch()
 #include <windows.h> // Required for smooth screen rendering without flashing
 
 using namespace std;
 
-// Game Configuration Constants
 const int MAP_HEIGHT = 11;
 const int MAP_WIDTH = 15;
 
@@ -34,12 +32,11 @@ private:
     bool won;
     HANDLE hConsole; // Console handle for smart cursor manipulation
 
-    // NEW VISIBILITY LOGIC: Reveals a 3x3 square (including diagonals) around the player
+    // Reveals a 3x3 square (including diagonals) around the player
     bool isVisible(int r, int c)
     {
         int rowDiff = abs(r - playerY);
         int colDiff = abs(c - playerX);
-        // True only if the block is at most 1 row away AND 1 column away
         return (rowDiff <= 1 && colDiff <= 1);
     }
 
@@ -82,19 +79,21 @@ public:
         }
 
         // Perform an initial regular clear once at launch
-        std::system("cls");
+        system("cls");
     }
 
     void renderFrame()
     {
         resetCursorPosition();
 
-        cout << "=========================================\n";
-        cout << "        THE MIDNIGHT ESCAPE (C++)        \n";
-        cout << "=========================================\n";
+        // Standardized to exactly 33 characters wide to prevent unexpected text wrapping breaks
+        cout << "=================================\n";
+        cout << "    THE MIDNIGHT ESCAPE (C++)    \n";
+        cout << "=================================\n";
+
+        // Padded with trailing spaces to erase older multi-digit layout numbers cleanly
         cout << " Total Moves Taken: " << movesCount << "        \n";
-        cout << " Controls: W (Up), A (Left), S (Down), D (Right) | X (Exit)\n";
-        cout << "-----------------------------------------\n\n";
+        cout << " Controls: W/A/S/D | X to Exit   \n\n";
 
         for (int i = 0; i < MAP_HEIGHT; ++i)
         {
@@ -111,62 +110,63 @@ public:
                 }
                 else
                 {
-                    cout << "  "; // Option B: Pure darkness
+                    cout << "  ";
                 }
             }
             cout << "\n";
         }
-        cout << "\n=========================================\n";
+        cout << "\n=================================\n";
+
+        // Extra trailing blank lines clear out any ghost frames left behind if the window shifts
+        cout << "                                 \n";
+        cout << "                                 \n";
     }
 
     void handleInput()
     {
-        if (_kbhit())
+        char key = _getch();
+        int targetX = playerX;
+        int targetY = playerY;
+
+        switch (key)
         {
-            char key = _getch();
-            int targetX = playerX;
-            int targetY = playerY;
+        case 'w':
+        case 'W':
+            targetY--;
+            break;
+        case 's':
+        case 'S':
+            targetY++;
+            break;
+        case 'a':
+        case 'A':
+            targetX--;
+            break;
+        case 'd':
+        case 'D':
+            targetX++;
+            break;
+        case 'x':
+        case 'X':
+            gameRunning = false;
+            return;
+        default:
+            return;
+        }
 
-            switch (key)
+        // Boundary collision physics detection filters
+        if (targetY >= 0 && targetY < MAP_HEIGHT && targetX >= 0 && targetX < MAP_WIDTH)
+        {
+            if (maze[targetY][targetX] != '#')
             {
-            case 'w':
-            case 'W':
-                targetY--;
-                break;
-            case 's':
-            case 'S':
-                targetY++;
-                break;
-            case 'a':
-            case 'A':
-                targetX--;
-                break;
-            case 'd':
-            case 'D':
-                targetX++;
-                break;
-            case 'x':
-            case 'X':
-                gameRunning = false;
-                return;
-            default:
-                return;
-            }
+                playerX = targetX;
+                playerY = targetY;
+                movesCount++;
 
-            // Boundary collision physics detection filters
-            if (targetY >= 0 && targetY < MAP_HEIGHT && targetX >= 0 && targetX < MAP_WIDTH)
-            {
-                if (maze[targetY][targetX] != '#')
+                if (maze[playerY][playerX] == 'E')
                 {
-                    playerX = targetX;
-                    playerY = targetY;
-                    movesCount++;
-
-                    if (maze[playerY][playerX] == 'E')
-                    {
-                        won = true;
-                        gameRunning = false;
-                    }
+                    won = true;
+                    gameRunning = false;
                 }
             }
         }
@@ -194,11 +194,11 @@ public:
         std::system("cls");
         if (won)
         {
-            cout << "\nCONGRATULATIONS! You reached the Exit 'E' in " << movesCount << " moves!\n\n";
+            cout << "\nGG! Total Moves taken: " << movesCount << "\n\n";
         }
         else
         {
-            cout << "\nGame session terminated successfully.\n\n";
+            cout << "\nGame ended.\n\n";
         }
     }
 };

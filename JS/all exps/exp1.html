@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        document.write("Arithmetic Operations <br>");
+
+        let n1 = Number(prompt("Enter 1st no.:"));
+        let n2 = Number(prompt("Enter 2nd no.:"));
+
+        let add = n1 + n2;
+        let sub = n1 - n2;
+
+        document.write("1st no.: " + n1 + "<br>");
+        document.write("2nd no.: " + n2 + "<br>");
+
+        document.write("Addition: " + add + "<br>");
+        document.write("Subtraction: " + sub + "<br>");
+
+        if (n2 !== 0) {
+            let div = n1 / n2;
+            document.write("Division: " + div + "<br>");
+        } else {
+            document.write("Division not possible. <br>");
+        }
+
+        //Loop
+        for (let i = 1; i <= 3; i++) {
+            document.write("Loop no.: " + i + " <br>");
+        }
+    </script>
+</body>
+
+</html>

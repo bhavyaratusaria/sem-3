@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChromaClick: Speed & Reflex Trainer</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-wrapper">
+        <!-- START SCREEN OVERLAY -->
+        <div id="start-screen" class="overlay">
+            <h1>ChromaClick</h1>
+            <p class="subtitle">JS SLA Reflex Testing Framework</p>
+            <p class="rules-text">
+                <strong>Rules:</strong> Wait for the 5-second countdown. A target color will appear. Click it as fast as
+                possible! 3 Rounds total. Clicking the wrong color adds a <strong>+500ms penalty</strong>.
+            </p>
+            <button class="btn" id="start-btn">Start Experiment</button>
+        </div>
+
+        <!-- MAIN GAME DASHBOARD -->
+        <h1>ChromaClick</h1>
+        <p class="subtitle">SLA Lab Run</p>
+
+        <div class="status-panel">
+            <div>Round: <span id="lbl-round">1</span>/3</div>
+            <div>Last Split: <span id="lbl-split">--</span></div>
+        </div>
+
+        <div id="alert-banner" class="alert-banner">
+            Click Start to Begin
+        </div>
+
+        <div id="grid-matrix" class="grid-matrix">
+            <!-- JavaScript dynamically populates elements here -->
+        </div>
+
+        <!-- RESULTS OVERLAY -->
+        <div id="results-screen" class="overlay hidden">
+            <h2>Test Evaluation Complete</h2>
+            <div class="results-list">
+                <li><span>Round 1 Split:</span> <span id="res-r1">0ms</span></li>
+                <li><span>Round 2 Split:</span> <span id="res-r2">0ms</span></li>
+                <li><span>Round 3 Split:</span> <span id="res-r3">0ms</span></li>
+                <li class="penalty-row"><span id="res-penalty-lbl">Penalties Applied:</span> <span
+                        id="res-penalty-val">0</span></li>
+            </div>
+            <p>Average Reflex Speed:</p>
+            <div id="final-avg" class="final-score">0ms</div>
+            <button class="btn" id="restart-btn">Run Test Again</button>
+        </div>
+    </div>
+
+    <!-- Link to external JS file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

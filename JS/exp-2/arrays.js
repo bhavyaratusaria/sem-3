@@ -1,4 +1,3 @@
-
 let alpha = ['A', 'B', 'C'];
 
 alpha.push('D');

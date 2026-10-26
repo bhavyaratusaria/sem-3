@@ -41,8 +41,8 @@ int main()
         wt[i] = tat[i - 1];
         tat[i] = wt[i] + bt[i];
 
-        total_wt = total_wt + wt[i];
-        total_tat = total_tat + tat[i];
+        total_wt += wt[i];
+        total_tat += tat[i];
     }
 
     printf("\nPID\tBT\tWT\tTAT\n");

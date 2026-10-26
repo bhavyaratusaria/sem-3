@@ -37,7 +37,7 @@ public:
 int main()
 {
     s2 = Student(55, "Bhavya", 84.1);
-    s3 = Student(56, "Aarush", 89.2);
+    s3 = Student(56, "Aarush", 96.2);
     s1.display();
     s2.display();
     s3.display();
