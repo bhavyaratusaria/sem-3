@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Form Events</h1>
+    <form name="myForm" method="post">
+        Hover:
+        <input type="button" value="Hover Me!" onmouseover="hello()">
+        Mouse Down:
+        <input type="button" value="Mouse Down!" onmousedown="hello()">
+        Mouse Up:
+        <input type="button" value="Mouse Up!" onmouseup="hello()">
+        Mouse Out:
+        <input type="button" value="Mouse Out!" onmouseout="hello()">
+        Press Key:
+        <input type="text" name="lname" onkeypress="keyPress()">
+        Key down:
+        <input type="text" name="lname" onkeydown="keyPress()">
+        Key up:
+        <input type="text" name="lname" onkeyup="keyRelease()">
+        <button type="button" onclick="hello()">Click</button>
+        <button type="button" ondblclick="hello()">Double Click</button>
+    </form>
+    <script>
+        function hello() {
+            alert('Hello!');
+        }
+        function keyPress() {
+            alert('key pressed.');
+        }
+        function keyRelease() {
+            alert('key released.');
+        }
+    </script>
+</body>
+
+</html>

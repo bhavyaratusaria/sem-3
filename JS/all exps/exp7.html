@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Cookies</h1>
+
+    <button onclick="makeSession()">Session Cookie</button>
+    <button onclick="makePersistent()">Persistent Cookie</button>
+    <button onclick="readCookie()">Read Cookie</button>
+    <button onclick="delCookie()">Delete Cookie</button>
+
+    <script>
+        function makeSession() {
+            document.cookie = "username=bha";
+        }
+
+        function makePersistent() {
+            document.cookie = "username=bha; expires=Fri, 31 Dec 2027 23:59:59 UTC";
+        }
+
+        function readCookie() {
+            let c = document.cookie;
+            alert(c);
+            console.log(c);
+        }
+
+        function delCookie() {
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        }
+    </script>
+</body>
+
+</html>

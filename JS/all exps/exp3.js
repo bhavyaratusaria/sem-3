@@ -3,8 +3,8 @@ let greeting = "   Hello, World!   ";
 console.log(greeting.toUpperCase());
 console.log(greeting.toLowerCase());
 
-let cleanedGreeting = greeting.trim();
-console.log(cleanedGreeting);
+let cleanGreeting = greeting.trim();
+console.log(cleanGreeting);
 
 let string = "The quick brown fox jumps over the lazy dog.";
 

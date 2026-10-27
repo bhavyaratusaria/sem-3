@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Form</h1>
+
+    <form onsubmit="return form()">
+        <label>Name: </label>
+        <input type="text" id="txtName"><br><br>
+
+        <label>Gender: </label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female<br><br>
+
+        <label>Course: </label>
+        <select>
+            <option>Select:</option>
+            <option>JavaScript</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        function form() {
+            var name = document.getElementById("txtName").value;
+
+            if (name == "") {
+                alert("Enter Name");
+                return false;
+            } else {
+                alert("Form Submitted");
+                return true;
+            }
+        }
+    </script>
+    <style>
+        form {
+            border: 1px solid black;
+            padding: 15px;
+            width: 250px;
+        }
+    </style>
+
+</body>
+
+</html>

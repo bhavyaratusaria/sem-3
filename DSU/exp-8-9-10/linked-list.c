@@ -65,6 +65,7 @@ void insertAtPos(int data, int position)
     newNode->next = temp->next;
     temp->next = newNode;
 }
+
 void insertAfter(int data, int afterData)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
@@ -119,7 +120,9 @@ void deleteAtBeg()
     struct Node *temp = head;
     head = head->next;
     free(temp);
+    printf("First element deleted.\n");
 }
+
 void deleteAtEnd()
 {
     if (head == NULL)
@@ -131,6 +134,7 @@ void deleteAtEnd()
     {
         free(head);
         head = NULL;
+        printf("Last element deleted.\n");
         return;
     }
     struct Node *temp = head;
@@ -140,6 +144,80 @@ void deleteAtEnd()
     }
     free(temp->next);
     temp->next = NULL;
+    printf("Last element deleted.\n");
+}
+
+void deleteAfter(int afterData)
+{
+    struct Node *temp = head;
+
+    while (temp != NULL && temp->data != afterData)
+    {
+        temp = temp->next;
+    }
+
+    if (temp == NULL)
+    {
+        printf("Element %d not found in the list\n", afterData);
+        return;
+    }
+
+    if (temp->next == NULL)
+    {
+        printf("No element exists after %d to delete.\n", afterData);
+        return;
+    }
+
+    struct Node *nodeToDelete = temp->next;
+    temp->next = nodeToDelete->next;
+    free(nodeToDelete);
+    printf("Element after %d has been deleted.\n", afterData);
+}
+
+void mergeLists()
+{
+    int val;
+    struct Node *head2 = NULL;
+    struct Node *temp2 = NULL;
+
+    printf("Enter elements for the second list (enter -1 to stop): \n");
+    while (1)
+    {
+        printf("Enter num: ");
+        scanf("%d", &val);
+        if (val == -1)
+            break;
+
+        struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+        newNode->data = val;
+        newNode->next = NULL;
+
+        if (head2 == NULL)
+        {
+            head2 = newNode;
+            temp2 = head2;
+        }
+        else
+        {
+            temp2->next = newNode;
+            temp2 = newNode;
+        }
+    }
+
+    if (head == NULL)
+    {
+        head = head2;
+    }
+    else
+    {
+        struct Node *temp = head;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = head2;
+    }
+    printf("Lists merged successfully!\n");
 }
 
 void search(int data)
@@ -161,21 +239,25 @@ void search(int data)
 
 int main()
 {
-    int choice, n, pos;
+    int choice, n, pos, afterData;
     while (1)
     {
-        printf("Linked List Operations:\n");
+        printf("\n--- Linked List Operations ---\n");
         printf("1. Insert at Beginning\n");
         printf("2. Insert at End\n");
         printf("3. Insert at Position\n");
-        printf("8. Delete at Beginning\n");
-        printf("9. Delete at End\n");
-        printf("10. Display\n");
-        printf("11. Count\n");
-        printf("12. Search\n");
-        printf("13. Exit\n");
+        printf("4. Insert After\n");
+        printf("5. Delete at Beginning\n");
+        printf("6. Delete at End\n");
+        printf("7. Delete After\n");
+        printf("8. Display\n");
+        printf("9. Count Nodes\n");
+        printf("10. Search\n");
+        printf("11. Merge Two Lists\n");
+        printf("12. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
+
         switch (choice)
         {
         case 1:
@@ -189,32 +271,46 @@ int main()
             insertAtEnd(n);
             break;
         case 3:
-            printf("Enter num and position: ");
-            scanf("%d, %d", &n, &pos);
+            printf("Enter num and position (space separated): ");
+            scanf("%d %d", &n, &pos);
             insertAtPos(n, pos);
             break;
         case 4:
-            deleteAtBeg();
+            printf("Enter num to insert and element to insert after (space separated): ");
+            scanf("%d %d", &n, &afterData);
+            insertAfter(n, afterData);
             break;
         case 5:
-            deleteAtEnd();
+            deleteAtBeg();
             break;
         case 6:
+            deleteAtEnd();
+            break;
+        case 7:
+            printf("Enter element after which you want to delete: ");
+            scanf("%d", &afterData);
+            deleteAfter(afterData);
+            break;
+        case 8:
             display();
             printf("Null\n");
             break;
-        case 7:
+        case 9:
             count();
             break;
-        case 8:
+        case 10:
             printf("Enter element to search: ");
             scanf("%d", &n);
             search(n);
             break;
-        case 9:
+        case 11:
+            mergeLists();
+            break;
+        case 12:
+            printf("Exiting program...\n");
             exit(0);
         default:
-            printf("Invalid choice.");
+            printf("Invalid choice. Please try again.\n");
         }
     }
     return 0;
